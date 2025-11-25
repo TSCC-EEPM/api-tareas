@@ -21,4 +21,4 @@ app.include_router(health_router)
 # Prueba de funcionamiento:
 @app.get("/")
 def root():
-    return {"message": "API de productos funcionando"}
+    return {"message": "API de tareas funcionando"}
