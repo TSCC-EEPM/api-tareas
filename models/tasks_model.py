@@ -27,6 +27,12 @@ class TaskPatch(BaseModel):
     title: Optional[str] = None
     done: Optional[bool] = None
 
+class Error(BaseModel):
+    error: str
+
+    class Config:
+        extra = "forbid"
+
 
 # ---------------------------------------------------------
 # Almacenamiento en memoria (no persistente)

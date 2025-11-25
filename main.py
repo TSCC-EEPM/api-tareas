@@ -1,6 +1,7 @@
 # main.py
 from fastapi import FastAPI
-from routers.product_router import router as product_router
+from routers.tasks_router import router as tasks_router
+from routers.health_router import router as health_router
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="API REST  - Tareas")
@@ -14,9 +15,10 @@ app.add_middleware(
     allow_headers=["*"],  # Permitir todos los encabezados
 )
 
-app.include_router(product_router)
+app.include_router(tasks_router)
+app.include_router(health_router)
 
-# Si quieres algo de prueba:
+# Prueba de funcionamiento:
 @app.get("/")
 def root():
     return {"message": "API de productos funcionando"}
