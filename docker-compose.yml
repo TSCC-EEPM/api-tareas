@@ -1,0 +1,9 @@
+services:
+  api:
+    build: .
+    container_name: api-tareas-enoc
+    ports:
+      - "3021:8000"
+    restart: unless-stopped
+    volumes:
+      - .:/app
